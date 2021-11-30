@@ -1,14 +1,19 @@
 type Query {
   character(id:ID!): Character
-  pogues: [Character]
-  kooks: [Character]
+  pogues: [Character]!
+  kooks: [Character]!
 }
 
 type Mutation {
   upserCharacter(input: CharacterInput!): Character!
 }
 
-input Character {
+type Character {
   id: ID!
   name: String!
+}
+
+input CharacterInput {
+  name: String!
+  id: String
 }
