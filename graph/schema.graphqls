@@ -5,7 +5,7 @@ type Query {
 }
 
 type Mutation {
-  upserCharacter(input: CharacterInput!): Character!
+  upsertCharacter(input: CharacterInput!): Character!
 }
 
 type Character {
