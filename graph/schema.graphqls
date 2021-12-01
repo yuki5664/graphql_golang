@@ -1,19 +1,29 @@
 type Query {
   character(id:ID!): Character
-  pogues: [Character]!
-  kooks: [Character]!
+  characters(cliqueType:CliqueType!): [Character!]
 }
 
 type Mutation {
   upsertCharacter(input: CharacterInput!): Character!
 }
 
+enum CliqueType {
+  KOOSK
+  POGUES
+}
+
 type Character {
   id: ID!
   name: String!
+  isHero: Boolean!
+  cliqueType: CliqueType!
 }
 
 input CharacterInput {
   name: String!
   id: String
+  isHero: Boolean
+  cliqueType: CliqueType!
 }
+
+
